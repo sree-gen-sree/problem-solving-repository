@@ -1,10 +1,13 @@
 class Solution {
-    public int[] shuffle(int[] nums, int n) {
-        int[] result = new int[2*n];
-        for(int i=0; i<n; i++){
-                result[2*i] = nums[i];
-                result[2*i+1] = nums[n+i];
+    public int finalValueAfterOperations(String[] operations) {
+        int X = 0;
+        for(int i=0; i<operations.length; i++){
+            if(operations[i].equals("++X") || (operations[i].equals("X++"))){
+                X++;
+            }else{
+                X--;
+            }
         }
-        return result;
+        return  X;
     }
 }
